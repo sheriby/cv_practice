@@ -36,12 +36,12 @@ def plane_sweep_ncc(im_l,im_r,start,steps,wid):
 im_l = array(Image.open('left.png').convert('L'), 'f')
 im_r = array(Image.open('right.png').convert('L'),'f')
 # 开始偏移，并设置步长
-steps = 12
+steps = 40
 start = 4
 # ncc 的宽度
-wid = 24 
+wid = 16
 
 res = plane_sweep_ncc(im_l,im_r,start,steps,wid)
 res = res * (255 / np.max(res)) 
-imageio.imsave('result_24.png', np.uint8(res))
+imageio.imsave('result_16.png', np.uint8(res))
 
